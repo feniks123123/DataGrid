@@ -1,7 +1,7 @@
 import { DataGridSelectCell } from '../DataGridSelectCell';
 import checkValue from '../utils/checkValue';
 
-export const DataGridCell = (props) => {
+export const DataGridCell = (props: { columns: any; dragData: any; editRowId: any; row: any; rowState: any; handlerTableInput: any; handlerSelect: any; color: any; }) => {
     const { columns, dragData, editRowId, row, rowState, handlerTableInput, handlerSelect, color } = props;
     const rowIsEditable = editRowId === row.id;
     const getColumnClassName = (columnId: string): string => `cell-id-${columnId.replace('.', '_')}`;

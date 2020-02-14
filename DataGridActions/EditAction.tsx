@@ -1,6 +1,5 @@
 import React from 'react';
 import { EditActionsStyle, WrapperIcon } from './DataGridActions.styles';
-import { Icon } from '@fcc/rbo-ui';
 
 export const EditAction = (props: any) => {
     const { actionEdit } = props;
@@ -19,7 +18,11 @@ export const EditRowAction = (props: any) => {
 
     return (
         <WrapperIcon onClick={onClick}>
-            <Icon design={renderIcon} />
+            // todo fix icon
+            <svg>
+                {renderIcon}
+            </svg> 
+            {/* <Icon design={} /> */}
         </WrapperIcon>
     );
 };

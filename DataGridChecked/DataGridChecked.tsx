@@ -1,6 +1,5 @@
 import React from 'react';
 import { BulletCell } from './DataGridChecked.styles';
-import { Checkbox } from '@fcc/rbo-ui';
 import { Rows } from '../types';
 
 interface DataGridCheckedProps {
@@ -25,7 +24,7 @@ export const DataGridChecked = (props: DataGridCheckedProps): JSX.Element | null
 
     return (
         <BulletCell color={color}>
-            <Checkbox checked={checkedMap} name={row.id} onChange={onChange} />
+            <input type='checkbox' checked={checkedMap} name={row.id} onChange={onChange} />
         </BulletCell>
     );
 };

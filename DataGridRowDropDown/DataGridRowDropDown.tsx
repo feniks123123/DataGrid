@@ -1,7 +1,7 @@
 import React from 'react';
 import { DataGridBodyRow } from './DataGridRowDropDown.styles';
 
-export const DataGridRowDropDown = (props) => {
+export const DataGridRowDropDown = (props: { row: any; color: any; checked: any; isDropDownContent: any; dropDownWidth: any; checkedWidth: any; }) => {
     const { row, color, checked, isDropDownContent, dropDownWidth, checkedWidth } = props;
     return (
         <DataGridBodyRow

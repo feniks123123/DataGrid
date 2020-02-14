@@ -1,6 +1,5 @@
 import React from 'react';
 import { CancelActionsStyle, WrapperIcon } from './DataGridActions.styles';
-import { Icon } from '@fcc/rbo-ui';
 
 export const CancelAction = (props: any) => {
     const { actionDelete, actionCancel } = props;
@@ -11,7 +10,7 @@ export const CancelAction = (props: any) => {
     return <CancelActionsStyle />;
 };
 
-export const CancelRowAction = (props) => {
+export const CancelRowAction = (props: { actionCancel: any; actionDelete: any; onClick: any; }) => {
     const { actionCancel, actionDelete, onClick } = props;
     if (!actionCancel || Boolean(actionDelete)) {
         return null;
@@ -19,7 +18,10 @@ export const CancelRowAction = (props) => {
 
     return (
         <WrapperIcon onClick={onClick}>
-            <Icon design='cross' />
+            // todo fix icon
+            <svg>
+                cross
+            </svg>
         </WrapperIcon>
     );
 };

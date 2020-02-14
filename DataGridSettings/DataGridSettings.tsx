@@ -52,23 +52,23 @@ export class DataGridSettings extends React.PureComponent<any, any> {
             .map((column: any) => {
                 const checked = column && !column.hidden;
                 const onChange = (event: any, payload: any) => this.handleChangeColumn(payload.value, column.id);
-
+                // todo input Checkbox
                 return (
-                    <Checkbox key={column.id} size='m' checked={checked} onChange={onChange}>
+                    <input type='checkbox' key={column.id} checked={checked} onChange={onChange}>
                         {column.name || column.id}
-                    </Checkbox>
+                    </input>
                 );
             });
 
         return (
             // todo fix inline-style
             <div style={{ textAlign: 'left' }}>
-                <H3 bold>Столбцы:</H3>
-                <List>
-                    <Groups design='vertical' size='xs'>
+                <h3>Столбцы:</h3>
+                <div>
+                    <div>
                         {list}
-                    </Groups>
-                </List>
+                    </div>
+                </div>
             </div>
         );
     }
@@ -82,12 +82,12 @@ export class DataGridSettings extends React.PureComponent<any, any> {
 
         return (
             <div>
-                <H3 bold>Фильтр:</H3>
-                <Groups design='vertical' size='xs'>
-                    <Checkbox size='m' checked={configurable.filter} name='checkedFilter' onChange={this.checkedFilter}>
+                <h3>Фильтр:</h3>
+                <div>
+                    <input type='checkbox' checked={configurable.filter} name='checkedFilter' onChange={this.checkedFilter}>
                         фильтрация по колонке
-                    </Checkbox>
-                </Groups>
+                    </input>
+                </div>
             </div>
         );
     }

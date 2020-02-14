@@ -9,7 +9,6 @@ import {
     HeaderCellSpan,
 } from './DataGridHeader.styles';
 import { BulletCell } from '../DataGridChecked/DataGridChecked.styles';
-import { Checkbox } from '@fcc/rbo-ui';
 import Pin from './images/pin';
 import { DataGridSort } from '../DataGridSort';
 import { DataGridResize } from '../DataGridResize';
@@ -87,7 +86,8 @@ export class DataGridHeader extends React.PureComponent<any, any> {
                 onMouseLeave={this.handleResizeEnd}>
                 {checked && (
                     <BulletCell id='checked-col' header style={{ zIndex: 35 }}>
-                        <Checkbox checked={checkedAll()} indeterminate={indeterminate} onChange={checkAll} />
+                        // todo fix checked
+                        <input checked={checkedAll()} indeterminate={indeterminate} onChange={checkAll} />
                     </BulletCell>
                 )}
                 {isDropDownContent && (
